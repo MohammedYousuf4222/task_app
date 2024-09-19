@@ -15,7 +15,6 @@ class _LandingScreenState extends State<LandingScreen> {
   void initState() {
     super.initState();
 
-    // Set a timer for 2 seconds and navigate to the next screen
     Timer(Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
