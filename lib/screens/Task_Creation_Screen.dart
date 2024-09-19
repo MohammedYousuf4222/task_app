@@ -19,13 +19,13 @@ class _TaskCreationScreenState extends State<TaskCreationScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Create Task', style: TextStyle(
-            color: Colors.white,
-            fontSize: 21,
-            fontWeight: FontWeight.w600
-          ),),
-          backgroundColor: const Color.fromARGB(255, 117, 69, 229),
+          title: const Text(
+            'Create Task',
+            style: TextStyle(
+                color: Colors.white, fontSize: 21, fontWeight: FontWeight.w600),
           ),
+          backgroundColor: const Color.fromARGB(255, 117, 69, 229),
+        ),
         body: Padding(
           padding: const EdgeInsets.only(top: 40, left: 10, right: 10),
           child: SizedBox(
@@ -39,10 +39,9 @@ class _TaskCreationScreenState extends State<TaskCreationScreen> {
                   child: Column(
                     children: [
                       TextFormField(
-                        decoration: 
-                        InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: 'Task Name'),
+                        decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Task Name'),
                         validator: (value) =>
                             value!.isEmpty ? 'Task Name is required' : null,
                         onSaved: (value) => _taskName = value!,
@@ -51,19 +50,20 @@ class _TaskCreationScreenState extends State<TaskCreationScreen> {
                         height: 20,
                       ),
                       TextFormField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: 'Task Description'),
+                        keyboardType: TextInputType.multiline,
+                        maxLines: null,
+                        decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Task Description'),
                         onSaved: (value) => _taskDescription = value!,
                       ),
-                       const SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       DropdownButtonFormField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder()
-                        ),
-                        hint: Text("Employee"),
+                        decoration:
+                            const InputDecoration(border: OutlineInputBorder()),
+                        hint: const Text("Employee"),
                         validator: (value) =>
                             value == null ? 'Employee is required' : null,
                         value: _selectedEmployee,
@@ -80,8 +80,9 @@ class _TaskCreationScreenState extends State<TaskCreationScreen> {
                         width: 350,
                         child: ElevatedButton(
                           style: const ButtonStyle(
-                            backgroundColor:WidgetStatePropertyAll(Color.fromARGB(255, 117, 69, 229),) 
-                          ),
+                              backgroundColor: WidgetStatePropertyAll(
+                            Color.fromARGB(255, 117, 69, 229),
+                          )),
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               _formKey.currentState!.save();
@@ -90,17 +91,20 @@ class _TaskCreationScreenState extends State<TaskCreationScreen> {
                                   description: _taskDescription,
                                   assignedEmployee: _selectedEmployee!));
                               const snackBar = SnackBar(
-                                backgroundColor: const Color.fromARGB(255, 117, 69, 229),
-                                content: Center(child: Text('Task Succesfully Created')),
+                                backgroundColor:
+                                    const Color.fromARGB(255, 117, 69, 229),
+                                content: Center(
+                                    child: Text('Task Succesfully Created')),
                               );
-                              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
                               Navigator.pop(context);
                             }
                           },
-                          child: Text('Create Task', style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16
-                          ),),
+                          child: const Text(
+                            'Create Task',
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
                         ),
                       ),
                     ],

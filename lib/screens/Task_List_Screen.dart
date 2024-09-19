@@ -11,7 +11,10 @@ class TaskListScreen extends StatelessWidget {
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
           backgroundColor: const Color.fromARGB(255, 117, 69, 229),
-          child: Icon(Icons.add, color: Colors.white,),
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
           onPressed: () {
             Navigator.push(
               context,
@@ -21,13 +24,13 @@ class TaskListScreen extends StatelessWidget {
         ),
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 117, 69, 229),
-          title: const Text('Task List', style: TextStyle(
-            color: Colors.white,
-            fontSize: 21,
-            fontWeight: FontWeight.w600
-          ),),
-          centerTitle: true,
+          title: const Text(
+            'Task List',
+            style: TextStyle(
+                color: Colors.white, fontSize: 21, fontWeight: FontWeight.w600),
           ),
+          centerTitle: true,
+        ),
         body: BlocBuilder<TaskBloc, TaskState>(
           builder: (context, state) {
             if (state is TaskCreated && state.tasks.isNotEmpty) {
@@ -38,33 +41,39 @@ class TaskListScreen extends StatelessWidget {
                   return Column(
                     children: [
                       ExpansionTile(
-                        leading: Icon(Icons.person, color: Colors.green,),
-                        title: Text(task.name,
-                        style: const TextStyle(
-                                fontSize: 21
-                              ),
-                        ),subtitle: Text(task.assignedEmployee,
-                        style: const TextStyle(
-                                fontSize: 16
-                              ),
+                        leading: Icon(
+                          Icons.person,
+                          color: Colors.green,
+                        ),
+                        title: Text(
+                          task.name,
+                          style: const TextStyle(fontSize: 21),
+                        ),
+                        subtitle: Text(
+                          task.assignedEmployee,
+                          style: const TextStyle(fontSize: 16),
                         ),
                         children: [
-                          SizedBox
-                          (
-                            height: 40,
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Text(task.description,
-                              style: const TextStyle(
-                                fontSize: 16
-                              ),)))
+                          Text(
+                            "Description",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18),
+                          ),
+                          Container(
+                              padding: EdgeInsets.all(14),
+                              child: Align(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    task.description,
+                                    style: const TextStyle(fontSize: 16),
+                                  )))
                         ],
-                        ),
+                      ),
                     ],
                   );
                 },
               );
-            } else { 
+            } else {
               return Center(child: Text('No tasks available'));
             }
           },

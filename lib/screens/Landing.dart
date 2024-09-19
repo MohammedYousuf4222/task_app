@@ -27,15 +27,12 @@ class _LandingScreenState extends State<LandingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.only(left: 75),
-        child: Center(
-          child: Lottie.asset(
-            'assets/lottie/landing-lottie.json',
-            width: 400,
-            height: 300,
-            fit: BoxFit.fill,
-          ),
+      body: Center(
+        child: Lottie.asset(
+          'assets/lottie/Animation-lottie.json',
+          width: 300,
+          height: 300,
+          fit: BoxFit.fill,
         ),
       ),
     );
