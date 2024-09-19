@@ -1,4 +1,5 @@
 import 'package:dubai_task/bloc/Task_Bloc.dart';
+import 'package:dubai_task/screens/Landing.dart';
 import 'package:dubai_task/screens/Task_Creation_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Task Assignment System',
         theme: ThemeData(primarySwatch: Colors.blue),
-        home: TaskListScreen(),
+        home: LandingScreen(),
         routes: {
           '/create-task': (context) => TaskCreationScreen(),
         },
