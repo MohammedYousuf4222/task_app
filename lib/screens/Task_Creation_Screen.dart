@@ -90,7 +90,8 @@ class _TaskCreationScreenState extends State<TaskCreationScreen> {
                                   description: _taskDescription,
                                   assignedEmployee: _selectedEmployee!));
                               const snackBar = SnackBar(
-                                content: Text('Task Succesfully Created'),
+                                backgroundColor: const Color.fromARGB(255, 117, 69, 229),
+                                content: Center(child: Text('Task Succesfully Created')),
                               );
                               ScaffoldMessenger.of(context).showSnackBar(snackBar);
                               Navigator.pop(context);
