@@ -1,10 +1,7 @@
-import 'package:dubai_task/bloc/Task_Bloc.dart';
-import 'package:dubai_task/screens/Landing.dart';
-import 'package:dubai_task/screens/Task_Creation_Screen.dart';
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,17 +10,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => TaskBloc(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Task Assignment System',
-        theme: ThemeData(primarySwatch: Colors.blue),
-        home: LandingScreen(),
-        routes: {
-          '/create-task': (context) => TaskCreationScreen(),
-        },
+    return MaterialApp(
+      title: 'Aletha Health Exercise App',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
       ),
+      home: HomeScreen(),
     );
   }
 }
