@@ -1,4 +1,4 @@
-import 'package:dubai_task/model/exercise.dart';
+import 'package:aletha_health/model/exercise.dart';
 
 abstract class ExerciseState {}
 

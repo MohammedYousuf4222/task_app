@@ -1,7 +1,7 @@
 // ignore_for_file: override_on_non_overriding_member
 
 import 'dart:async';
-import 'package:dubai_task/model/exercise.dart';
+import 'package:aletha_health/model/exercise.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'exercise_event.dart';
 import 'exercise_state.dart';

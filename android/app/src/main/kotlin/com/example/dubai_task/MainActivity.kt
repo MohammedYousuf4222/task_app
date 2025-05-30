@@ -1,4 +1,4 @@
-package com.example.dubai_task
+package com.example.aletha_health
 
 import android.os.Bundle
 import android.app.AlertDialog

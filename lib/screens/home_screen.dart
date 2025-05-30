@@ -1,10 +1,10 @@
 // ignore_for_file: use_key_in_widget_constructors
 
 
-import 'package:dubai_task/bloc/exercise_bloc.dart';
-import 'package:dubai_task/bloc/exercise_event.dart' show LoadExercises;
-import 'package:dubai_task/bloc/exercise_state.dart';
-import 'package:dubai_task/screens/exercise_detailed_screen.dart';
+import 'package:aletha_health/bloc/exercise_bloc.dart';
+import 'package:aletha_health/bloc/exercise_event.dart' show LoadExercises;
+import 'package:aletha_health/bloc/exercise_state.dart';
+import 'package:aletha_health/screens/exercise_detailed_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
